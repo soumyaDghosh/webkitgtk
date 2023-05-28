@@ -43,8 +43,10 @@ parts:
       - libgles2
       - libglx0
       - libgav1-0
+      - libglu1-mesa
       - libgstreamer-gl1.0-0
       - libgstreamer-plugins-base1.0-0
+      - libgstreamer-plugins-bad1.0-0
       - libgstreamer1.0-0
       - libgtk-4-1
       - libharfbuzz-icu0
@@ -68,6 +70,10 @@ parts:
       - libsoup-3.0-0
       - libsystemd0
       - xdg-dbus-proxy
+    override-prime: |
+      craftctl default
+      cd $CRAFT_PRIME
+      rm -rf usr/lib/*/caca
 
 
 
