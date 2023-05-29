@@ -74,6 +74,7 @@ parts:
       craftctl default
       cd $CRAFT_PRIME
       rm -rf usr/lib/*/caca
+      rm -rf usr/lib/*/libharfbuzz*
 
 
 
