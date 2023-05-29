@@ -48,8 +48,8 @@ parts:
       - libgstreamer-plugins-base1.0-0
       - libgstreamer-plugins-bad1.0-0
       - libgstreamer1.0-0
-      - libgtk-4-1
-      - libharfbuzz-icu0
+      #- libgtk-4-1
+      #- libharfbuzz-icu0
       - libhyphen0
       - liblcms2-2
       - libmanette-0.2-0
