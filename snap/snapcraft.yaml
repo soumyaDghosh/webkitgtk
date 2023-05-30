@@ -20,61 +20,94 @@ parts:
     stage-snaps: [ webkitgtk-sdk/latest/edge ]
     prime:
       - usr/bin/WebKitWebDriver
+      - usr/bin/bwrap
       - usr/share/gir-1.0/*
       - usr/share/locale/*
-      - usr/lib/$CRAFT_ARCH_TRIPLET/girepository-1.0/*
       - usr/lib/libjavascriptcoregtk*
       - usr/lib/webkitgtk-6.0/*
       - usr/lib/libwebkitgtk*
-  deps:
-    plugin: nil
-    stage-packages:
-      - bubblewrap
-      - gstreamer1.0-libav
-      - gstreamer1.0-plugins-base
-      - gstreamer1.0-plugins-good
-      - libabsl20210324
-      - libaom3
-      - libatomic1
-      - libavif13
-      - libdav1d5
-      - libenchant-2-2
-      - libepoxy0
-      - libgles2
-      - libglx0
-      - libgav1-0
-      - libglu1-mesa
-      - libgstreamer-gl1.0-0
-      - libgstreamer-plugins-base1.0-0
-      - libgstreamer-plugins-bad1.0-0
-      - libgstreamer1.0-0
-      #- libgtk-4-1
-      #- libharfbuzz-icu0
-      - libhyphen0
-      - liblcms2-2
-      - libmanette-0.2-0
-      - libnghttp2-14
-      - libopengl0
-      - libopenjp2-7
-      - libsecret-1-0
-      - libseccomp2
-      - libtasn1-6
-      - libwebp7
-      - libwebpdemux2
-      - libwoff1  
-      - libwpe-1.0-1
-      - libwpebackend-fdo-1.0-1
-      - libxcomposite1
-      - libxslt1.1
-      - libyuv0
-      - libsoup-3.0-0
-      - libsystemd0
-      - xdg-dbus-proxy
-    override-prime: |
-      craftctl default
-      cd $CRAFT_PRIME
-      rm -rf usr/lib/*/caca
-      rm -rf usr/lib/*/libharfbuzz*
-
-
+      - usr/lib/$CRAFT_ARCH_TRIPLET/girepository-1.0/*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/lapack/*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libv4l/*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libv4lconvert0/*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/mfx/*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/perl5
+      - usr/lib/$CRAFT_ARCH_TRIPLET/pulseaudio/*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/vdpau/*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libabsl*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libaom*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libass*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libavc*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libavf*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libavu*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libb*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libchroma*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libcodec*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libdav*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libflite*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgav*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgfortran*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgme*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgsm*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgstadaptive*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgstbad*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgstcodec*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgstin*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgstis*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgstmpeg*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgstplay*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgstctp*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgstt*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgstu*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgstva*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgstwayland*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libgstweb*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/liblil*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libmfx*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libmysofa*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libnorm*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libnuma*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libOp*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libopenmpt*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libpgm*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libpixman*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libpocket*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libpsl*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/librabbitmq*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/librsvg*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/librubb*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libserd*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libshine*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libsodium*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libsnappy*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libsord*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libsoup*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libsoxr*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libsphinx*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libsr*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libssh*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libsw*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libudfread*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libva*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libvdpau*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libwpe*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libWPE*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libx264*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libx265*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libxvid*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libyuv*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libzimg*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libzmq*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libzvb*
+      - usr/share/alsa
+      - usr/share/gettext
+      - usr/share/gir-1.0
+      - usr/share/glvnd
+      - usr/share/gstreamer-1.0
+      - usr/share/iso-codes
+      - usr/share/libmysofa
+      - usr/share/locale
+      - usr/share/mfx
+      - usr/share/mime
+      - usr/share/perl5 
 
