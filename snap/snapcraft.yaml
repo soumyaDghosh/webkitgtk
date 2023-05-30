@@ -39,6 +39,7 @@ parts:
       - usr/lib/$CRAFT_ARCH_TRIPLET/libass*
       - usr/lib/$CRAFT_ARCH_TRIPLET/libavc*
       - usr/lib/$CRAFT_ARCH_TRIPLET/libavf*
+      - usr/lib/$CRAFT_ARCH_TRIPLET/libavif*
       - usr/lib/$CRAFT_ARCH_TRIPLET/libavu*
       - usr/lib/$CRAFT_ARCH_TRIPLET/libb*
       - usr/lib/$CRAFT_ARCH_TRIPLET/libchroma*
