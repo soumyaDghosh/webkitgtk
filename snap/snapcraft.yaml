@@ -108,8 +108,7 @@ parts:
       - usr/share/iso-codes
       - usr/share/libmysofa
       - usr/share/locale
-      try:
-        - usr/share/mfx
+      - usr/share/mfx:amd64
       - usr/share/mime
       - usr/share/perl5 
 
